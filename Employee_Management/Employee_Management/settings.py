@@ -31,7 +31,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'djangotest243105@gmail.com'  # Replace with your sender email address
-EMAIL_HOST_PASSWORD = 'uabpsoyemnzupwzm'
+EMAIL_HOST_PASSWORD = ''
 
 ALLOWED_HOSTS = []
 
