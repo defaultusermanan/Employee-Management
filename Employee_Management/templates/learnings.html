@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  
+  <style>
+    .learning-container {
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+      padding: 5.4%;
+      margin-bottom: 200px;
+      max-width: 600rem;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+    
+    .learning-container h1 {
+      font-size: 40px;
+      margin-top: -20px;
+    }
+    
+    .form-group label {
+      font-size: 20px;
+      display: block;
+      width: 200px;
+    }
+    
+    .form-control {
+      font-size: 16px;
+      padding: 6px;
+      width: 100%;
+    }
+    
+    .btn-primary {
+      font-size: 24px;
+      padding: 6px 12px;
+    }
+    
+    .form-row {
+      display: flex;
+      align-items: baseline;
+    }
+    
+    .form-row .col-sm-2 {
+      flex: 0 0 8.33333%;
+      max-width: 8.33333%;
+    }
+    
+    .form-row .col-sm-3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    
+    .form-row .col-sm-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center">
+        <div class="learning-container">
+          <h1 align="center">Weekly Learnings</h1><br>
+          
+          <!-- Employee input fields -->
+          <form>
+            <div class="form-row">
+              <div class="col-sm-3">
+                <label for="weekInput"></label>
+                <select class="form-control" id="weekInput">
+                  <option value="">Select a week</option>
+                  <option value="Week 1">Week 1</option>
+                  <option value="Week 2">Week 2</option>
+                  <option value="Week 3">Week 3</option>
+                  <option value="Week 4">Week 4</option>
+                </select>
+              </div>
+              <div class="col-sm-3">
+                <label for="dateInput"></label>
+                <input type="text" class="form-control" id="dateInput" placeholder="Date" disabled>
+              </div>
+              <div class="col-sm-3">
+                <label for="monthInput"></label>
+                <input type="text" class="form-control" id="monthInput" placeholder="Month" disabled>
+              </div>
+              <div class="col-sm-3">
+                <label for="employeeInput"></label>
+                <input type="text" class="form-control" id="employeeInput" placeholder="Employee name" disabled>
+              </div>
+            </div>
+          </form>
+
+          <!-- Learnings input -->
+          <div class="form-group">
+            <label for="learningsTextarea">Write your learnings:</label>
+            <textarea class="form-control" id="learningsTextarea" rows="5"></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <button class="btn btn-dark" id="submitBtn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

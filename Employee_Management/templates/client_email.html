@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Rectangle Container</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: white;
+    }
+
+    .rectangle-container {
+      border: solid rgba(4,1,200,.6);
+      background-color: #fff;
+      padding: 20px;
+      width: 130%; /* Adjust the width of the rectangle */
+      max-width: 1200px; /* Set a maximum width for responsiveness */
+      height: 100vh; /* Adjust the height of the rectangle */
+      max-height: 1200px; /* Set a maximum height for responsiveness */
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-y: scroll;
+      overflow-x:hidden;
+      position: relative; /* Add position relative to make positioning work */
+    }
+
+    .content {
+      /* Adjust the positioning properties to center the content */
+      position: absolute;
+      top: 83%;
+      left: 50%;
+      transform: translate(-52%, -50%);
+      text-align: left;
+      font-size: 20px;
+      color: #fff;
+      width: 80%; /* Adjust the width of the content */
+    }
+
+    .content p {
+      margin-bottom: 30px;
+      color: black;
+    }
+
+    /* Additional styles to make it look nicer */
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: left;
+    }
+
+    .logo {
+      position: relative;
+      top: -10px;
+      left: 45%;
+      transform: translateX(-50%);
+    }
+
+    .logo img {
+      width: 270%;
+      max-width: 270px;
+      height: auto;
+    }
+
+    .inner-image {
+      position: relative;
+      top: 5%;
+      left: 30%;
+      transform: translateX(-50%);
+      width: 450px;
+      height: 450px;
+    }
+
+    .additional-image {
+      position: relative;
+      bottom: 8%; /* Adjust the distance from the bottom */
+      left: 8%;
+      transform: translateX(-50%);
+      width: 250px; /* Adjust the width of the additional image */
+      height: auto;
+      mix-blend-mode: darken;
+    }
+
+    h2 {
+      color: #045BAE;
+      font-family: 'Poppins', sans-serif;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      color: black;
+    }
+    body {
+      display: flex;
+      justify-content:center;
+      align-items:center;
+      min-height: 100vh;
+      background : #d5d0d6;
+    }
+    .box{
+      position : absolute;
+      width:150px;
+      height:150px;
+      left:70px;
+    }
+    .box-services{
+      position : absolute;
+      width:150px;
+      height:150px;
+      left:320px;
+    }
+    .dropdown {
+      position: relative;
+      width:110%;
+      height: 60px;
+      background-color:#045BAE;
+      color: white;
+      font-size:22px;
+      display : flex;
+      justify-content: center;
+      align-items:center;
+      border-radius: 5px;
+      cursor:pointer;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    .dropdown .left-icon, .dropdown .right-icon {
+      position: relative ;
+      display: inline-block;
+      width : 15px;
+      height : 5px;
+      background : #fff;
+      border-radius : 40px;
+      transition : .3s;
+    }
+    .dropdown .left-icon{
+      left:7px;
+      transform : rotate(45deg);
+    }
+    .dropdown.active .left-icon{
+      transform : rotate(135deg);
+    }
+    .dropdown .right-icon{
+      transform : rotate(-45deg);
+    }
+    .dropdown.active .right-icon{
+      transform : rotate(-135deg);
+    }
+    
+    .dropdown.active .items a{
+      left:0;
+    }
+    .dropdown .items a:hover{
+      color: white;
+    }
+    .dropdown .items a span{
+      position : absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height:100%;
+      background:#045BAE;
+      z-index:-1;
+      border-radius:inherit;
+      transform : rotate(160deg);
+      transform-origin: right;
+      transition : 0.3s;
+    }
+    .dropdown .items a:hover span{
+      transform : rotate(0deg);
+    }
+
+    /* ... other styles ... */
+  </style>
+</head>
+<body>
+  <div class="rectangle-container border-effect">
+    <div class="logo">
+      <img src="https://i.postimg.cc/nhxfRFJY/logo-removebg-preview.png" alt="Logo" class="img-fluid"/>
+      <img class="inner-image img-fluid" src="https://i.postimg.cc/3xVqpkV8/frame2.png" alt="Another Image" />
+        <div class="content">
+          <h2>Welcome to MARKYTICS</h2><br>
+          <p>
+          Dear [Client's Name],
+          </p>
+          <p>
+          We are thrilled to have you on board as a valued client of [Your Company Name]. As a leading IT service and product provider, we are committed to delivering exceptional solutions and support to help you achieve your business goals. This email serves as your official onboarding guide to familiarize you with our services, products, and additional offerings, as well as our escalation matrix for prompt assistance.
+           </p>
+          <p>
+          Product/Service Offered for the arrangement:
+          </p>
+        <br><br>
+        <div id="dynamicContent">
+          <p id="defaultContent">
+            We are committed to your success and will do everything in our power to provide you with exceptional service and support throughout our partnership. If you have any questions, concerns, or need further assistance, please don't hesitate to reach out to us.<br><br>
+            We genuinely appreciate your trust in Markytics. We are excited about the journey ahead and look forward to helping you unlock the full potential of your IT infrastructure.<br><br> 
+            Once again, Welcome to Markytics!<br><br>
+            Best regards,<br> 
+            Team Markytics<br><br>
+          </p>
+          <div id="productsContent" style="display: none;">
+            <p>
+              [Product/Service Name 1]: This innovative solution provides [brief description of the benefits and features of the product/service].</p>
+            <p>[Product/Service Name 2]: Our comprehensive [product/service] enables you to [describe the key functionalities and advantages it offers].</p>
+            <p>[Product/Service Name 3]: With our cutting-edge [product/service], you can [highlight how it addresses specific business needs or pain points].</p>
+            <p>Our team will ensure a seamless integration and provide ongoing support to maximize the value you receive.</p>
+          </div>
+          <div id="servicesContent" style="display:none;">
+            <p>Contents for Services. Modify this text as needed.</p>
+            <p>And add more content specific to services here.</p>
+          </div>
+    </div>  
+  </div>
+    <!-- New additional image -->
+    <img class="additional-image" src="https://i.postimg.cc/J4P01Lgc/n-logo.png" alt="Additional Image" />
+
+  
+</body>
+</html>

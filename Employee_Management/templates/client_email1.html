@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Our Organization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 630px;
+            margin: 0 auto;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;    
+        }
+        h1 {
+            margin-top: 0;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        
+        
+        .main-container {
+         position: relative;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+    }
+ 
+  
+
+
+.text-container {
+  position: absolute;
+  width: 285px;
+  height: 45.95145034790039px;
+  top: -844px;
+  left: -750px;
+}
+.markcontainer {
+  position: relative;
+}
+
+.marktext-container {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  font-weight: bold;
+  font-size:40px;
+}
+
+.rectangle-container {
+      border: 2px solid rgba(4,1,200,.6);
+      background-color: #fff;
+      padding: 20px;
+      width: 100%; 
+      max-width: 80px 
+      height: 100vh; 
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x:hidden;
+      position: relative; 
+    }
+    .container img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+ 
+.containerz{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-containerz {
+  text-align: left;
+  fon-size:40px;
+}
+
+.markimg {
+      position: relative;
+      top: -380px;
+      left: 90px;
+      transform: translateX(-50%)
+}
+
+.markimg img {
+      width: 20%;
+      max-width: 20px;
+      height: auto;
+    }
+
+    </style>    
+    
+    
+</head>
+<body>
+     
+      <div class="main-container rectangle-container">
+                {% comment %} <div class="marktext-container" style="text-align:right; position: absolute; top: 120px; right: 20px; font-weight: bold; font-size:30px;"> {% endcomment %}
+                     {% comment %} Markytics {% endcomment %}
+                        {% comment %} </div> {% endcomment %}
+         <div class="markimg" style="text-align:left; position: relative; top: -380px; left: 90px; transform: translateX(-50%)" >
+             {% comment %} <img style = "width: 300%; max-width: 350px; height: auto;" src="https://i.postimg.cc/nhxfRFJY/logo-removebg-preview.png" > {% endcomment %}
+                </div>
+     
+            <div class="containerz " style="align:left">
+                 <img src="https://i.postimg.cc/3xVqpkV8/frame2.png " alt="Image 2">
+                                
+    <div class="text-containerz " style="text-align: left;  text-align: left; font-size:15px;"  >
+        <h1 style="color: blue;">Welcome to Markytics!</h1>
+        <h4 style="color: black; text-align: left;font-size:25px;">Dear [Client Name],<br><br> We are thrilled to have you on board as a valued client of [Your Company Name]. As a leading IT service and product provider, we are committed to delivering exceptional solutions and support to help you achieve your business goals. This email serves as your official onboarding guide to familiarize you with our services, products, and additional offerings, as well as our escalation matrix for prompt assistance.<br><br>
+          Products/Services offered for arrangement<br><br>
+          We are committed to your success and will do everything in our power to provide you with exceptional service and support throughout our partnership. If you have any questions, concerns, or need further assistance, please don't hesitate to reach out to us.<br><br>
+          We genuinely appreciate your trust in [Your Company Name]. We are excited about the journey ahead and look forward to helping you unlock the full potential of your IT infrastructure.<br><br>
+          Once again, Welcome to Markytics!<br><br>
+          Best regards,<br>
+          Team Markytics
+      </h4>
+        
+        <h4 style="text-align: left;font-size:25px;" > 
+        </h4>
+         <h4 style="text-align: left;font-size:25px;">
+         </h4>
+         <h4 style="text-align: left;font-size:25px;">
+         </h4>        
+         <div>
+         {% comment %} <h4 style="text-align: left;font-size:25px;">We genuinely appreciate your trust in [Your Company Name]. We are excited about the journey ahead and look forward to helping you unlock the full potential of your IT infrastructure.</h4> {% endcomment %}
+         {% comment %} <h4 style="text-align: left;font-size:25px;">Once again, Welcome to Markytics!</h4> {% endcomment %}
+         {% comment %} <h4 style="text-align: left;font-size:25px;">Best regards,<br> {% endcomment %}
+          {% comment %} Team Markytics {% endcomment %}
+         </h4>
+         </div>
+         </div>
+    </div>
+
+
+   
+
+
+</body>
+</html>

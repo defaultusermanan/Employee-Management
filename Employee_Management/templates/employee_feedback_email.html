@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-color: #808080;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #FDFEFF;
+            padding: 20px;
+        }
+
+        .content {
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1; /* Added this line to distribute equal space */
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+            flex: 1; /* Added this line to distribute equal space */
+        }
+
+        .image-container img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Media Queries */
+
+        @media only screen and (min-width: 600px) {
+            .container {
+                padding: 40px;
+            }
+
+            .content {
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            .image-container {
+                margin-top: 0;
+                margin-left: 20px;
+                text-align: right;
+            }
+            .image-container img{
+                max-width : 100%;
+                height:auto;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .content {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: red;" align="center">Greetings!</h1>
+        <div class="content">
+            <div class="content-text">
+                <p>Dear {{ employee_name }},</p>
+                <p>
+                    I hope this email finds you well. We are writing to provide you with some feedback on your performance since you joined the company 7 days ago.
+                </p>
+                <p>
+                    We've been quite impressed with your work. Here are a few areas where I think you could improve:
+                </p>
+                <p>{{ review }}</p>
+                <p>
+                    Thank you for your hard work. I'm excited to see how you continue to grow and develop in your role.
+                </p>
+                <p>Sincerely, {{ manager_name }}</p>
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/YjKRB55K/logo.jpg" alt="Image">
+                    <h2>Image</h2>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

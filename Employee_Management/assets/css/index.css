@@ -1,0 +1,10 @@
+.image {
+    position: relative;
+    width: 100%;
+    height: 2052px;
+    background-image: url('frame1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  

@@ -1,0 +1,242 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Feedback Form in HTML Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            float:right;
+            margin-right:20px;
+            }
+            .slider-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              }
+              
+              .slider-value {
+                font-weight: bold;
+              }
+              
+              /* Customized slider styles */
+              input[type="range"] {
+                width: 650px;
+              }
+              
+              input[type="range"]::-webkit-slider-thumb {
+                width: 20px;
+                height: 20px;
+              }
+              .slider-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              }
+              
+              .slider-value {
+                font-weight: bold;
+              }
+              
+              /* Customized slider styles */
+              .slider-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+              }
+              
+              .slider-value {
+                font-weight: bold;
+              }
+              
+              /* Customized slider styles */
+              input[type="range"] {
+                width: 96%; /* Adjust the width as desired */
+                border-radius: 10px;
+                -webkit-appearance: none;
+                background-color: #ddd;
+                height: 10px;
+              }
+              
+              input[type="range"]::-webkit-slider-thumb {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #888;
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: -5px;
+              }
+              
+              input[type="range"]::-moz-range-thumb {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #888;
+                cursor: pointer;
+                margin-top: -5px;
+              }
+              
+              button[type="submit"] {
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+              }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <meta name="author" content="Codeconvey" />
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}" 
+	
+</head>
+<body>
+		
+<div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right" >            
+        </div>
+        <div class="col-rt-2">
+            <ul>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header class="ScriptHeader">
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="rt-heading">
+                <h1>Feedback Form</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="rt-container">
+        <div class="col-rt-12">
+            <div class="Scriptcontent">
+                <div class="feedback">
+                    <form action="{% url 'feedback_form' %}" enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <select class="form-select" name="employee" id="employee" >
+                            <option value="" selected disabled>Select an employee</option>
+                            {% for employee in employeesDropdown %}
+                            <option value="{{ employee }}">{{ employee }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <select class="form-select" name="manager" id="manager">
+                            <option value="" selected disabled>Manager's name</option>
+                            {% for manager in managersDropdown %}
+                            <option value="{{ manager }}">{{ manager }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <a type="button" class="btn btn-dark" href="{% url 'details' %}" onclick="window.open('{% url 'details' %}', '_blank'); return false;">Details of Employee</a>
+                        <div class="clear"></div>
+                        <hr class="survey-hr">
+                        <div class="question">
+                            <label for="performance">1. Overall performace of the employee:</label><br><br>
+                            <input type="range" name="performance"  id="performance" min="0" max="10" step="0.1" value="0">
+                            <span class="slider-value">0</span>
+                        </div>
+                        <div class="clear"></div>
+                        <hr class="survey-hr">
+                        <div class="question">
+                            <label for="behavior">2. Behaviour of the employee:</label><br><br>
+                            <input type="range" name="behavior" id="behavior" min="0" max="10" step="0.1" value="0">
+                            <span class="slider-value">0</span>
+                        </div>
+                        <div class="clear"></div>
+        <hr class="survey-hr">
+        <div class="question">
+            <label for="deadlines">3. How well the employee manages the deadlines:</label><br><br>
+            <input type="range" id="deadlines" name="deadlines" min="0" max="10" step="0.1" value="0">
+            <span class="slider-value">0</span>
+        </div>
+        <div class="clear"></div>
+        <hr class="survey-hr">                
+            <label for="commentText">4. Positives of the Employee:</label><br><br>
+            <textarea cols="750" name="commentText1" id="commentText1" rows="4" style="width: 100%; resize:none"></textarea><br><br>                    
+            
+            <div class="clear"></div>
+        <hr class="survey-hr">                
+            <label for="commentText">5. Negatives of the Employee:</label><br><br>
+            <textarea cols="750" name="commentText2" id="commentText2" rows="4" style="width: 100%; resize:none"></textarea><br><br> 
+                        
+            <div class="clear"></div>
+            <hr class="survey-hr">                
+                <label for="commentText">6. Scope of Improvement (Will be shared with employees):</label><br><br>
+                <textarea cols="750" name="commentText3" id="commentText3" rows="4" style="width: 100%; resize:none"></textarea><br><br> 
+          <div class="clear"></div>
+          <hr class="survey-hr"> 
+          <div class="clear"></div>
+                        
+        <input style="background: #000000; color: #fff; padding: 12px; border: 0;" type="submit" value="Submit your review">
+         </form>
+        </div>
+       </div>
+     </div>
+ </div>
+</section>
+     
+<script>
+  const sliders = document.querySelectorAll('input[type="range"]');
+const sliderValues = document.querySelectorAll('.slider-value');
+
+sliders.forEach((slider, index) => {
+  slider.addEventListener('input', () => {
+    sliderValues[index].textContent = slider.value;
+  });
+
+  slider.addEventListener('mousemove', (event) => {
+    const value = slider.value;
+    const tooltip = sliderValues[index]; // Reference the corresponding slider value element
+    tooltip.textContent = value;
+    tooltip.style.left = `${event.clientX + 10}px`;
+    tooltip.style.top = `${event.clientY - 30}px`;
+  });
+
+  slider.addEventListener('mouseout', () => {
+    sliderValues[index].textContent = slider.value; // Update the tooltip text after moving the slider
+  });
+});
+
+const form = document.getElementById('feedbackForm');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const performance = parseInt(document.getElementById('performance').value);
+  const behavior = parseInt(document.getElementById('behavior').value);
+  const deadlines = parseInt(document.getElementById('deadlines').value);
+  console.log('1. Overall performance of the employee:', performance);
+  console.log('2. Behaviour of the employee:', behavior);
+  console.log('3. How well the employee manages the deadlines:', deadlines);
+  form.reset();
+  sliderValues.forEach((value) => {
+    value.textContent = '0';
+  });
+});
+
+</script>
+
+
+
+</body>
+</html>
+
+
